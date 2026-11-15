@@ -48,10 +48,10 @@ Na ekranie pokazuje kod QR, nazwę tej sieci, hasło (8 cyfr, za każdym razem i
 
 Jeśli wpiszesz błędne hasło, zegar po ponownym uruchomieniu nie połączy się z siecią. Po 2 minutach znowu przejdzie
 w tryb ustawień i pokaże na czerwono „błędna nazwa sieci lub hasło”. Tryb ustawień włącza się sam tylko wtedy,
-gdy zapisana sieć nie zadziałała.
+gdy zapisana sieć ani razu nie zadziałała.
 
 Gdy sieć wcześniej działała, a potem zmienisz jej nazwę albo hasło w routerze, zegar sam nie przejdzie w tryb ustawień.
-Wtedy możesz wywołać tryb ustawień w następujący sposób: odłącz zasilanie, wciśnij pokrętło, podłącz zasilanie, 
+Wtedy możesz wywołać tryb ustawień w następujący sposób: odłącz zasilanie, wciśnij pokrętło, podłącz zasilanie,
 przytrzymaj pokrętło jeszcze 1-2 sekundy i puść.
 
 W trybie ustawień zegar nie pokazuje godziny. Żeby wrócić do ekranu z godziną, przytrzymaj pokrętło.
