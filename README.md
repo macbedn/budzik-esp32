@@ -172,6 +172,14 @@ Podłączenie (piny są w pliku [src/clock_common.hpp](src/clock_common.hpp)):
 | Enkoder       | A 35, B 33, przycisk 32 |
 | DFPlayer      | GPIO 17 (TX ESP32) do RX DFPlayera, GPIO 16 (RX ESP32) do TX DFPlayera |
 
+Schematy połączeń są w folderze [schemat](schemat/):
+- [schemat-montazowy.png](schemat/schemat-montazowy.png): moduły z kolorowymi przewodami i tabelą połączeń
+  (płytka ESP32 w wersji 38-pinowej),
+- [budzik-schemat.pdf](schemat/budzik-schemat.pdf): schemat elektryczny z programu KiCad. Projekt
+  `schemat/budzik.kicad_sch` otworzysz w KiCad 10 lub nowszym.
+
+![Schemat montażowy](schemat/schemat-montazowy.png)
+
 Obudowa ze zdjęć pasuje do ekranu 2,8" ST7789. Pliki do druku są na Printables:
 [Clock case for 2.8" ST7789](https://www.printables.com/model/1495132-clock-case-for-28-st7789).
 
