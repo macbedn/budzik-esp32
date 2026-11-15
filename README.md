@@ -168,7 +168,7 @@ Podłączenie (piny są w pliku [src/clock_common.hpp](src/clock_common.hpp)):
 
 | Element       | Piny ESP32 |
 |---------------|------------|
-| Ekran ST7789  | MOSI 23, SCLK 18, DC 4, CS 5, podświetlenie 14; RST i MISO niepodłączone |
+| Ekran ST7789  | MOSI 23, SCLK 18, DC 4, CS 5, podświetlenie 14; RST do pinu EN płytki ESP32 (nie zostawiać w powietrzu), MISO niepodłączone |
 | Enkoder       | A 35, B 33, przycisk 32 |
 | DFPlayer      | GPIO 17 (TX ESP32) do RX DFPlayera, GPIO 16 (RX ESP32) do TX DFPlayera |
 
