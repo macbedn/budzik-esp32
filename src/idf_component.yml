@@ -1,0 +1,4 @@
+## Biblioteki z rejestru Espressif (pobiera je PlatformIO przy kompilacji)
+dependencies:
+  # mDNS: nazwa budzik.local w sieci domowej (od ESP-IDF 5.0 poza samym IDF)
+  espressif/mdns: "^1.8.0"

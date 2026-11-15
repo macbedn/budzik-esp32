@@ -1,0 +1,22 @@
+.pio
+.vscode/*
+sdkconfig.*.old
+
+# dane tajne (hasło Wi-Fi na pierwsze uruchomienie), plik nieobowiązkowy
+src/secrets.h
+
+# melodie na kartę SD (prawa autorskie) nie trafiają do repozytorium
+*.mp3
+*.MP3
+*.wav
+*.WAV
+*.ogg
+*.flac
+*.m4a
+
+# biblioteki z rejestru Espressif (mDNS), pobierane przy kompilacji
+managed_components/
+dependencies.lock
+
+# wersja programu, tworzona przy kompilacji przez wersja.py
+src/wersja.h
