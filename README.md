@@ -212,7 +212,8 @@ z Wi-Fi, wraca do poprzedniej wersji.
 Zegar nie przyjmie aktualizacji, gdy alarm dzwoni, trwa drzemka albo alarm ma zadzwonić w ciągu 3 minut.
 
 Numer wersji na stronie pochodzi z tagów Gita (`v2.0`, `v2.1`, `v2.1.1` itd.). Zapisuje go skrypt [wersja.py](wersja.py)
-przy każdej kompilacji. Gdy projekt jest pobrany bez Gita, np. jako plik ZIP, strona pokaże wersję „nieznana”.
+przy każdej kompilacji. Gdy projekt jest pobrany bez Gita, np. jako plik ZIP, numer wersji pochodzi z pliku
+[wersja.txt](wersja.txt).
 
 ## Podziękowania
 - [javiser](https://github.com/javiser), autor oryginalnego [Crescendo Clock](https://github.com/javiser/crescendo-clock).
