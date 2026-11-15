@@ -1,4 +1,4 @@
-# Budzik na ESP32 z łagodnie narastającym dźwiękiem
+# Budzik na ESP32 z łagodnie narastającym dźwiękiem alarmu oraz bieżącą pogodą
 
 <p align="center">
   <img src="images/IMG_6886-front.jpg" alt="Budzik z przodu: godzina, pogoda, godzina alarmu i czas drzemki" width="49%">
@@ -6,15 +6,15 @@
 </p>
 
 Budzik powstał na podstawie projektu [Crescendo Clock](https://github.com/javiser/crescendo-clock), który napisał javiser.
-Z oryginału pochodzi pomysł łagodnego alarmu, obsługa jednym pokrętłem i główna część programu
+Z oryginału pochodzi pomysł łagodnego narastania dźwięku alarmu, obsługa jednym pokrętłem i główna część programu
 (obsługa alarmu, drzemki i ustawiania budzika, pokrętła i modułu MP3). Zmieniłem płytkę, ekran, czcionki i układ ekranu.
 Doszła pogoda, strona ustawień w przeglądarce, jasność zależna od pory dnia i aktualizacja przez Wi-Fi.
 
 ## Co potrafi
-- Alarm zaczyna grać cicho i stopniowo gra coraz głośniej. Melodia jest z karty microSD.
-- Całą obsługę na zegarze robi się jednym pokrętłem, które można też wciskać.
+- Alarm zaczyna grać cicho i stopniowo gra coraz głośniej. Melodia jest pobierana z karty microSD.
+- Całą obsługę zegara robi się jednym pokrętłem.
 - Godzinę zegar pobiera z internetu, a pogodę z serwisu [Open-Meteo](https://open-meteo.com), który nie wymaga klucza ani konta.
-- Ustawienia zmienia się na stronie w przeglądarce, pod adresem `http://budzik.local`.
+- Ustawienia zegara zmienia się na stronie w przeglądarce, pod adresem `http://budzik.local`.
 - Sieć Wi-Fi ustawia się telefonem: zegar włącza własną sieć i pokazuje na ekranie kod QR do połączenia.
 - Rano ekran rozjaśnia się płynnie od wschodu słońca, wieczorem przyciemnia się w okolicy zachodu, a w nocy gaśnie.
 - Nowe oprogramowanie można wgrać przez Wi-Fi. Jeśli nowa wersja nie działa, zegar wraca do poprzedniej.
@@ -48,10 +48,11 @@ Na ekranie pokazuje kod QR, nazwę tej sieci, hasło (8 cyfr, za każdym razem i
 
 Jeśli wpiszesz błędne hasło, zegar po ponownym uruchomieniu nie połączy się z siecią. Po 2 minutach znowu przejdzie
 w tryb ustawień i pokaże na czerwono „błędna nazwa sieci lub hasło”. Tryb ustawień włącza się sam tylko wtedy,
-gdy zapisana sieć ani razu nie zadziałała.
+gdy zapisana sieć nie zadziałała.
 
 Gdy sieć wcześniej działała, a potem zmienisz jej nazwę albo hasło w routerze, zegar sam nie przejdzie w tryb ustawień.
-Wtedy włącz go ręcznie: odłącz zasilanie, wciśnij pokrętło, podłącz zasilanie, przytrzymaj pokrętło jeszcze 1-2 sekundy i puść.
+Wtedy możesz wywołać tryb ustawień w następujący sposób: odłącz zasilanie, wciśnij pokrętło, podłącz zasilanie, 
+przytrzymaj pokrętło jeszcze 1-2 sekundy i puść.
 
 W trybie ustawień zegar nie pokazuje godziny. Żeby wrócić do ekranu z godziną, przytrzymaj pokrętło.
 Zegar wraca do niego także sam, w dwóch przypadkach:
@@ -69,7 +70,7 @@ Zegar wraca do niego także sam, w dwóch przypadkach:
 | Tryb ustawień (kod QR) | nic                           | nic                                              | wyjście z trybu ustawień               |
 
 Po dwukliku zegar pokazuje przez 10 sekund, w linii pogody, adres strony ustawień (`budzik.local` i adres IP).
-Gdy zegar zna godzinę, ale nie ma połączenia z Wi-Fi, zamiast adresu pokazuje podpowiedź „trzymaj pokrętło przy włączaniu”,
+Gdy zegar zna godzinę, ale nie ma połączenia z Wi-Fi, zamiast adresu pokazuje podpowiedź „trzymaj pokrętło wciśnięte przy włączaniu”,
 czyli jak ręcznie włączyć tryb ustawień.
 
 #### Ustawianie alarmu
@@ -82,7 +83,7 @@ czyli jak ręcznie włączyć tryb ustawień.
 - Nie klikaj drugi raz zaraz po pierwszym. Dwa szybkie kliknięcia zegar uzna za dwuklik i pokaże adres strony.
 
 #### Drzemka
-- Kliknięcie w czasie dzwonienia włącza drzemkę na 5 minut. Długość drzemki możesz zmienić na stronie, od 5 do 9 minut.
+- Kliknięcie w czasie dzwonienia włącza drzemkę. Długość drzemki możesz zmienić na stronie, w zakresie od 5 do 9 minut.
 - Po drzemce alarm dzwoni znowu, zaczynając cicho, tak jak za pierwszym razem. Drzemek może być dowolnie dużo.
 - Żeby wyłączyć alarm w czasie drzemki, zrób trzy ruchy, każdy najwyżej 3 sekundy po poprzednim: obróć pokrętło
   w jedną stronę, wciśnij je i przytrzymaj ok. 1 sekundy, a potem obróć w drugą stronę. Po pierwszym ruchu nad rzędem
@@ -90,7 +91,7 @@ czyli jak ręcznie włączyć tryb ustawień.
 
 #### Kiedy budzik sam się wyłącza
 - Po wyłączeniu alarmu w czasie drzemki budzik zostaje wyłączony.
-- Gdy nikt nie zareaguje na alarm, po 20 minutach dźwięk się urywa i budzik też zostaje wyłączony.
+- Gdy nikt nie zareaguje na alarm, po 20 minutach dźwięk przestaje grać i budzik też zostaje wyłączony.
 - W obu przypadkach następnego dnia budzik nie zadzwoni. Włącz go kliknięciem.
 
 #### Zanik prądu
@@ -112,7 +113,7 @@ czyli jak ręcznie włączyć tryb ustawień.
 W sieci domowej strona jest pod adresem `http://budzik.local`. Jeśli ten adres nie działa, użyj adresu IP,
 który zegar pokazuje po dwukliku. Strona działa na telefonie i na komputerze.
 
-Na górze strony widać stan połączenia Wi-Fi, aktualną pogodę i alarm: o której zadzwoni, za ile, czy właśnie dzwoni
+Na górze strony widać stan połączenia Wi-Fi, aktualną pogodę i alarm: o której zadzwoni, za ile czasu, czy właśnie dzwoni
 albo do kiedy trwa drzemka. Godzinę alarmu ustawisz tylko pokrętłem na zegarze.
 
 Niżej możesz zmienić jasność ekranu, długość drzemki, rodzaj pokazywanej temperatury i miejscowość, a także obejrzeć
@@ -131,7 +132,7 @@ zegar liczy sam ze współrzędnych miejscowości.
 
 Zegar może pokazywać temperaturę powietrza albo temperaturę odczuwalną. Obie pochodzą z Open-Meteo.
 
-Miejscowość do pogody wyszukasz po nazwie. Wyniki pokazują gminę, powiat i województwo, żeby łatwo odróżnić
+Miejscowość wyszukasz po nazwie. Wyniki pokazują gminę, powiat i województwo, żeby łatwo odróżnić
 miejscowości o tej samej nazwie. Możesz też wpisać współrzędne ręcznie. Dopóki nie wybierzesz miejscowości,
 zegar pokazuje pogodę dla Warszawy.
 
@@ -205,7 +206,7 @@ na Linuksie i macOS `curl`):
 ```bash
 curl.exe -H "X-Budzik: 1" --data-binary "@.pio/build/esp32dev/firmware.bin" http://budzik.local/api/aktualizacja
 ```
-Po aktualizacji nowa wersja jest próbna. Jeśli zegar połączy się z Wi-Fi i strona działa, po minucie nowa wersja
+Po aktualizacji nowa wersja ma status "próbna". Jeśli zegar połączy się z Wi-Fi i strona działa, po minucie nowa wersja
 zostaje na stałe. Jeśli zegar uruchomi się ponownie przed upływem tej minuty albo przez 10 minut nie połączy się
 z Wi-Fi, wraca do poprzedniej wersji.
 
