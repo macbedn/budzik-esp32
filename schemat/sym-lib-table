@@ -1,4 +1,0 @@
-(sym_lib_table
-	(version 7)
-	(lib (name "budzik") (type "KiCad") (uri "${KIPRJMOD}/budzik.kicad_sym") (options "") (descr "Moduły budzika"))
-)

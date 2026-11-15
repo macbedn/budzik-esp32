@@ -175,8 +175,7 @@ Podłączenie (piny są w pliku [src/clock_common.hpp](src/clock_common.hpp)):
 Schematy połączeń są w folderze [schemat](schemat/):
 - [schemat-montazowy.png](schemat/schemat-montazowy.png): moduły z kolorowymi przewodami i tabelą połączeń
   (płytka ESP32 w wersji 38-pinowej),
-- [budzik-schemat.pdf](schemat/budzik-schemat.pdf): schemat elektryczny z programu KiCad. Projekt
-  `schemat/budzik.kicad_sch` otworzysz w KiCad 10 lub nowszym.
+- [budzik-schemat.pdf](schemat/budzik-schemat.pdf): schemat elektryczny (KiCad).
 
 ![Schemat montażowy](schemat/schemat-montazowy.png)
 
